@@ -21,7 +21,7 @@ color_map = { # credits to some random guy from github
 }
 print("coded by timof121 in one morning so dont except something super epic")
 bearer = input('PUT YOUR BEARER TOKEN HERE: ')
-x = int(input('PUT THE X START COORDINATE HERE: '))
+x = input('PUT THE X START COORDINATE HERE: ')
 xoffset = input('HOW MUCH WE SHOULD MOVE X EVERY TIME?: ')
 y = input('PUT THE Y START COORDINATE HERE: ')
 yoffset = input('HOW MUCH WE SHOULD MOVE Y EVERY TIME?: ')
@@ -54,18 +54,11 @@ headers = {
 def send():
     global x
     global y
-    r = requests.post("https://gql-realtime-2.reddit.com/query", headers=headers, data=data)
-    print(r.text)
-    if x > 0:
-        x += int(xoffset)
-    else:
-        x += xoffset
-    if y > 0:
-        y += int(yoffset)
-    else:
-        y += yoffset
-
-while True:
     for i in range(5):
-        send()
+        r = requests.post("https://gql-realtime-2.reddit.com/query", headers=headers, data=data)
+    print(r.text)
+    x += xoffset
+    y += yoffset
+while True:
+    send()
     time.sleep(int(cooldown))
