@@ -25,7 +25,7 @@ x = input('PUT THE X START COORDINATE HERE: ')
 xoffset = input('HOW MUCH WE SHOULD MOVE X EVERY TIME?: ')
 y = input('PUT THE Y START COORDINATE HERE: ')
 yoffset = input('HOW MUCH WE SHOULD MOVE Y EVERY TIME?: ')
-cooldown = input("PUT HOW MUCH COOLDOWN U WANT BEETWEN PLACES IN SECONDS: ")
+cooldown = input("PUT HOW MUCH COOLDOWN U WANT BEETWEN PLACES IN SECONDS: \n (Recommended cooldown for verified old accounts is 301 seconds)")
 print("2 = bright red \n 3 = orange \n 4 = yellow \n 6 = darker green \n 8 = lighter green \n 12 = darkest blue \n 13 = medium normal blue \n 14 = cyan \n 18 = darkest purple \n 19 = normal purple \n 23 = pink \n 25 = brown \n 27 = black \n 29 = grey \n 30 = light grey \n 31 = white")
 color = input('SELECT FROM THE LIST ABOVE: ')
 data = payload = json.dumps(
