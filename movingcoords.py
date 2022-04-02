@@ -22,9 +22,9 @@ color_map = { # credits to some random guy from github
 print("coded by timof121 in one morning so dont except something super epic")
 bearer = input('PUT YOUR BEARER TOKEN HERE: ')
 x = int(input('PUT THE X START COORDINATE HERE: '))
-xoffset = int(input('HOW MUCH WE SHOULD MOVE X EVERY TIME?: '))
+xoffset = input('HOW MUCH WE SHOULD MOVE X EVERY TIME?: ')
 y = input('PUT THE Y START COORDINATE HERE: ')
-yoffset = int(input('HOW MUCH WE SHOULD MOVE Y EVERY TIME?: '))
+yoffset = input('HOW MUCH WE SHOULD MOVE Y EVERY TIME?: ')
 cooldown = input("PUT HOW MUCH COOLDOWN U WANT BEETWEN PLACES IN SECONDS: ")
 print("2 = bright red \n 3 = orange \n 4 = yellow \n 6 = darker green \n 8 = lighter green \n 12 = darkest blue \n 13 = medium normal blue \n 14 = cyan \n 18 = darkest purple \n 19 = normal purple \n 23 = pink \n 25 = brown \n 27 = black \n 29 = grey \n 30 = light grey \n 31 = white")
 color = input('SELECT FROM THE LIST ABOVE: ')
@@ -56,8 +56,15 @@ def send():
     global y
     r = requests.post("https://gql-realtime-2.reddit.com/query", headers=headers, data=data)
     print(r.text)
-    x += xoffset
-    y += yoffset
+    if x > 0:
+        x += int(xoffset)
+    else:
+        x += xoffset
+    if y > 0:
+        y += int(yoffset)
+    else:
+        y += yoffset
+
 while True:
     for i in range(5):
         send()
